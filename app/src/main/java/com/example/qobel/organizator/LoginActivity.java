@@ -76,6 +76,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         String password = this.password.getText().toString();
         Call<UserEntity> userEntityCall = userService.userLogin(name,password);
         userEntityCall.enqueue(userEntityCallback);
+
+        System.out.println("@login started");
     }
     private Callback<UserEntity> userEntityCallback = new Callback<UserEntity>(){
 
